@@ -3,7 +3,8 @@
 !["Screenshot..."](images/mdn_preview_eccv_imptc.png "Screenshot...")
 
 This is the official implementation for: _**Reliable Probabilistic Human Trajectory Prediction for Autonomous Applications**_. 
-Paper:  [![IEEE Badge](https://img.shields.io/badge/IEEE-00629B?logo=ieee&logoColor=fff&style=for-the-badge)](https://doi.org/10.1007/978-3-031-91585-7_9) [![arXiv Badge](https://img.shields.io/badge/arXiv-B31B1B?logo=arxiv&logoColor=fff&style=flat)](https://arxiv.org/abs/2410.06905) [![ResearchGate Badge](https://img.shields.io/badge/ResearchGate-0CB?logo=researchgate&logoColor=fff&style=flat)](https://www.researchgate.net/publication/384778609_Reliable_Probabilistic_Human_Trajectory_Prediction_for_Autonomous_Applications)
+
+**Paper:** [![IEEE Badge](https://img.shields.io/badge/IEEE-00629B?logo=ieee&logoColor=fff&style=for-the-badge)](https://doi.org/10.1007/978-3-031-91585-7_9) [![arXiv Badge](https://img.shields.io/badge/arXiv-B31B1B?logo=arxiv&logoColor=fff&style=flat)](https://arxiv.org/abs/2410.06905) [![ResearchGate Badge](https://img.shields.io/badge/ResearchGate-0CB?logo=researchgate&logoColor=fff&style=flat)](https://www.researchgate.net/publication/384778609_Reliable_Probabilistic_Human_Trajectory_Prediction_for_Autonomous_Applications)
 
 **ECCV 2024 UnCV-Workshop: Best-Paper-Award** :trophy: 
 
