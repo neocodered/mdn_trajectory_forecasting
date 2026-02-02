@@ -3,7 +3,7 @@
 !["Screenshot..."](images/mdn_preview_eccv_imptc.png "Screenshot...")
 
 This is the official implementation for: _**Reliable Probabilistic Human Trajectory Prediction for Autonomous Applications**_. 
-Paper: [[arXiv](https://arxiv.org/abs/2410.06905)] [[ResearchGate](https://www.researchgate.net/publication/384778609_Reliable_Probabilistic_Human_Trajectory_Prediction_for_Autonomous_Applications)]
+Paper:  [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14811016.svg)](https://doi.org/10.1007/978-3-031-91585-7_9) [[arXiv](https://arxiv.org/abs/2410.06905)] [[ResearchGate](https://www.researchgate.net/publication/384778609_Reliable_Probabilistic_Human_Trajectory_Prediction_for_Autonomous_Applications)]
 
 **ECCV 2024 UnCV-Workshop: Best-Paper-Award** :trophy: 
 
@@ -13,7 +13,7 @@ _**Abstract**_ -- Autonomous systems, like vehicles or robots, require reliable,
     @article{mdn,
         title={Reliable Probabilistic Human Trajectory Prediction for Autonomous Applications},
         author={Hetzel, M. and Reichert, H. and Doll, K. and Sick, B.},
-        journal={European Conference On Computer Vision (ECCV)},
+        journal={European Conference on Computer Vision (ECCV)},
         year={2024},
         organization={Springer},
         doi={tba}
@@ -35,14 +35,14 @@ _**Abstract**_ -- Autonomous systems, like vehicles or robots, require reliable,
 ---
 <a name="overview"></a>
 ### Overview
-This repository contains all code, data and descriptions for the Paper: "Reliable Probabilistic Human Trajectory Prediction for Autonomous Applications". The following chapters describe the necessary requirements to run our method, where to download our training and evaluation data, where to download pre-trained models and how to run the code for yourself.
+This repository contains all code, data, and descriptions for the paper "Reliable Probabilistic Human Trajectory Prediction for Autonomous Applications". The following chapters describe the requirements for running our method, where to download our training and evaluation data and pre-trained models, and how to run the code yourself.
 
 
 ---
 <a name="requirements"></a>
 ### Requirements
 
-The framework uses the following system configuration. The exact python requirements can be found in the corresponding requirements.txt file.
+The framework uses the following system configuration. The exact Python requirements can be found in the corresponding requirements.txt file.
 
 ```
 # Software
@@ -54,13 +54,13 @@ CuDNN 8.9
 ```
 
 **Docker:**
-If you want to use docker, we recommend the Nvidia NGC Pytorch 23.08 image: [[Info]](https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/rel-23-08.html) [[Docker Image]](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch). Run the image and install the corresponding python requirements.txt and your ready to go.
+If you want to use Docker, we recommend the Nvidia NGC Pytorch 23.08 image: [[Info]](https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/rel-23-08.html) [[Docker Image]](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch). Run the image and install the corresponding Python requirements.txt, and you're ready to go.
 
 
 ---
 <a name="datasets"></a>
 ### Datasets
-We use pedestrian trajectory data from four popular road traffic datasets for our methods training and evaluation (NuScenes, Waymo, inD and IMPTC), as well as the ETH/UCY surveillance dataset for cross-comparison with different Human Trajectory Prediction (HTP) frameworks. For all datasets we extracted the raw pedestrians trajectories, applied a human-ego-centric coordinate system transformation as pre-processing, and subsampled the input- and output horizon data for training and evaluation. The four traffic related datasets are resampled to fixed 10.0 Hz sampling rate. The ETH/UCY dataset is untouched with a 2.5 Hz sampling rate. Additional information (Papers/Code/Data) about all used datasets can be found below:
+We use pedestrian trajectory data from four popular road traffic datasets for training and evaluation of our methods (NuScenes, Waymo, inD, and IMPTC), as well as the ETH/UCY surveillance dataset for cross-comparison with various Human Trajectory Prediction (HTP) frameworks. Across all datasets, we extracted raw pedestrian trajectories, applied a human-ego-centric coordinate transformation as preprocessing, and subsampled the input and output horizons for training and evaluation. The four traffic-related datasets are resampled to a fixed sampling rate of 10.0 Hz. The ETH/UCY dataset is unmodified and sampled at 2.5 Hz. Additional information (Papers/Code/Data) about all used datasets can be found below:
 
 **IMPTC:** [[Paper]](https://ieeexplore.ieee.org/document/10186776) [[Data]](https://github.com/kav-institute/imptc-dataset)
 
@@ -80,7 +80,7 @@ We use pedestrian trajectory data from four popular road traffic datasets for ou
 ---
 <a name="pretrained"></a>
 ### Pre-trained Models and Datasets
-Pre-trained models and pre-processed training and evaluation data is provided within the table below.
+Pre-trained models and pre-processed training and evaluation data are provided within the table below.
 
 | Dataset       | Models | Data | Status    |
 |:-------------:|:---------------:|:-------------:|:---------:|
@@ -90,7 +90,7 @@ Pre-trained models and pre-processed training and evaluation data is provided wi
 ---
 <a name="prepro"></a>
 ### Data Preprocessing
-We extracted all pedestrian trajectories from NuScenes, Waymo, inD and IMPTC datasets. For NuScenes, Waymo, and IMPTC we adopt the pre-defined train/test/eval data splits. For inD such splits do not exists by default, therefore we defined our own (Train: sequences 00-06 and 18-29, Test: sequences 07-17, Eval: sequences 30-32). For homogenity NuScenes is up-sampled from 2.0 to 10.0 Hz, inD and IMPTC are down-sampled from 25.0 to 10.0 Hz. Waymo is untouched with 10.0 Hz sampling rate by default. To overcome coordinate system related biases or dependencies we transfered all trajectories into an independet human-ego-centric coordinate system with the position at the last input timestep is at position (0.0, 0.0), and all other input or ground truth positions are transfered related to this origin. We adapt the commonly used trajectory splitting into 3.2 s input horizon and 4.8 s forecast horizon. Longer trajectories are splitted into multiple subsplits with a step of 1 second. As a result the different dataset contains the following amount of trajectories.
+We extracted all pedestrian trajectories from NuScenes, Waymo, inD, and IMPTC datasets. For NuScenes, Waymo, and IMPTC, we adopt the pre-defined train/test/eval data splits. For inD, such splits do not exist by default; we defined our own splits (Train: sequences 00-06 and 18-29; Test: sequences 07-17; Eval: sequences 30-32). For homogenity NuScenes is up-sampled from 2.0 to 10.0 Hz, inD and IMPTC are down-sampled from 25.0 to 10.0 Hz. Waymo is sampled at 10.0 Hz by default. To overcome coordinate-system-related biases or dependencies, we transformed all trajectories into an independent human-ego-centric coordinate system, with the position at the last input timestep set to (0.0, 0.0), and all other input or ground-truth positions were transformed relative to this origin. We adapt the commonly used trajectory splitting to a 3.2-s input horizon and a 4.8-s forecast horizon. Longer trajectories are split into multiple subsplits with a 1-second step. As a result, the different datasets contain the following number of trajectories.
 
 | Dataset       | Train             | Test            | Eval |
 |:-------------:|:-----------------:|:---------------:|:----:|
@@ -103,7 +103,7 @@ We extracted all pedestrian trajectories from NuScenes, Waymo, inD and IMPTC dat
 ---
 <a name="training"></a>
 ### Model Training
-To run a training you can use the following command. All relevant information are provided by the configuration file. It contains all necessary paths, parameters and configurations for training and evaluation. For every dataset type one can create unlimited different configuration files.
+To run a training session, use the following command. All relevant information is provided by the configuration file. It contains all necessary paths, parameters, and configurations for training and evaluation. For every dataset type, one can create an unlimited number of different configuration files.
 ```
 # Start a training using IMPTC dataset and default config
 train.py --target=imptc --configs=default_peds_imptc.json --gpu=0 --log --print
@@ -120,7 +120,7 @@ train.py --target=imptc --configs=default_peds_imptc.json --gpu=0 --log --print
 ---
 <a name="evaluation"></a>
 ### Model Evaluation
-To run a model evaluation you can use the following command. The evaluation shares the config file with the training script.
+To run a model evaluation, you can use the following command. The evaluation shares the config file with the training script.
 ```
 # Start an evaluation for an IMPTC dataset trained model
 testing.py --target=imptc --configs=default_peds_imptc.json --gpu=0 --log --print
@@ -134,7 +134,7 @@ testing.py --target=imptc --configs=default_peds_imptc.json --gpu=0 --log --prin
 ```
 
 **Pre-trained models:**
-If you want to use a pre-trained model you must locate them into the correct subfolder structure: Starting at the defined "result_path" from the configuration file: 
+If you want to use a pre-trained model, you must locate them into the correct subfolder structure: Starting at the defined "result_path" from the configuration file: 
 
 ```
 # Structure:
