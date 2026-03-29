@@ -21,7 +21,7 @@ def testing(args, gpu_id):
     print(colored(f"Starting testing: on GPU: {gpu_id}", 'green'))
     
     # load configs from file
-    config_dir = os.path.join(os.getcwd(), 'src', model_arch, 'configs', args.target)
+    config_dir = os.path.join(os.getcwd(), model_arch, 'configs', args.target)
     
     # multiple configs
     if args.configs == 'all':
@@ -80,7 +80,7 @@ def testing(args, gpu_id):
         
         # pretrained model...?
         sequence_len = max_input_horizon
-        model.forward(torch.Tensor([[[batch_size], [sequence_len], [lstm_input_shape]]]))
+        model.forward(torch.randn(batch_size, sequence_len, lstm_input_shape))
         
         # create eval forecaster
         eval_forecaster = MDN_Forecaster(cfg=cfg, model=model, data_loader=data_loader, type='testing', device=device, logger=test_logger)

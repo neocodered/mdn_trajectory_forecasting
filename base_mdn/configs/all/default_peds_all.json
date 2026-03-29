@@ -3,26 +3,26 @@
     {
         "train_data_paths": 
         [
-            "/workspace/myr/trajdata/ego/imptc/train/ego_samples.pkl",
-            "/workspace/myr/trajdata/ego/ind/train/ego_samples.pkl",
-            "/workspace/myr/trajdata/ego/nuscenes/train/ego_samples.pkl",
-            "/workspace/myr/trajdata/ego/waymo/train/ego_samples.pkl"
+            "mdn_track_data/imptc/train/ego_samples.pkl",
+            "mdn_track_data/ind/train/ego_samples.pkl",
+            "mdn_track_data/nuscenes/train/ego_samples.pkl",
+            "mdn_track_data/waymo/train/ego_samples.pkl"
         ],
         "val_data_paths": 
         [
-            "/workspace/myr/trajdata/ego/imptc/eval/ego_samples.pkl",
-            "/workspace/myr/trajdata/ego/ind/eval/ego_samples.pkl",
-            "/workspace/myr/trajdata/ego/nuscenes/eval/ego_samples.pkl",
-            "/workspace/myr/trajdata/ego/waymo/eval/ego_samples.pkl"
+            "mdn_track_data/imptc/eval/ego_samples.pkl",
+            "mdn_track_data/ind/eval/ego_samples.pkl",
+            "mdn_track_data/nuscenes/eval/ego_samples.pkl",
+            "mdn_track_data/waymo/eval/ego_samples.pkl"
         ],
         "test_data_paths":
         [
-            "/workspace/myr/trajdata/ego/imptc/test/ego_samples.pkl",
-            "/workspace/myr/trajdata/ego/ind/test/ego_samples.pkl",
-            "/workspace/myr/trajdata/ego/nuscenes/test/ego_samples.pkl",
-            "/workspace/myr/trajdata/ego/waymo/test/ego_samples.pkl"
+            "mdn_track_data/imptc/test/ego_samples.pkl",
+            "mdn_track_data/ind/test/ego_samples.pkl",
+            "mdn_track_data/nuscenes/test/ego_samples.pkl",
+            "mdn_track_data/waymo/test/ego_samples.pkl"
         ],
-        "result_path": "/workspace/data/trained_models"
+        "result_path": "mdn_pretrained_models"
     },
     "model_params":
     {

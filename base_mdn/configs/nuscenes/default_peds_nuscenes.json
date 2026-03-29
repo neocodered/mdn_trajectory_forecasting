@@ -1,10 +1,10 @@
 {
     "paths":
     {
-        "train_data_paths": ["/workspace/myr/trajdata/ego/nuscenes/train/ego_samples.pkl"],
-        "val_data_paths": ["/workspace/myr/trajdata/ego/nuscenes/eval/ego_samples.pkl"],
-        "test_data_paths": ["/workspace/myr/trajdata/ego/nuscenes/test/ego_samples.pkl"],
-        "result_path": "/workspace/data/trained_models"
+        "train_data_paths": ["mdn_track_data/nuscenes/train/ego_samples.pkl"],
+        "val_data_paths": ["mdn_track_data/nuscenes/eval/ego_samples.pkl"],
+        "test_data_paths": ["mdn_track_data/nuscenes/test/ego_samples.pkl"],
+        "result_path": "mdn_pretrained_models"
     },
     "model_params":
     {

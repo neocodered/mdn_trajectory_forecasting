@@ -124,8 +124,7 @@ if __name__ == "__main__":
         gpu_id = 0
     
     # load configs from file
-    os.chdir('/workspace/repos')
-    config_dir = os.path.join(os.getcwd(), 'src', model_arch, 'configs', args.target)
+    config_dir = os.path.join(os.getcwd(), model_arch, 'configs', args.target)
     
     # multiple configs
     if args.configs == 'all':
